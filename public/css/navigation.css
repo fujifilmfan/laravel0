@@ -1,0 +1,15 @@
+.navbar-nav {
+	font-size: 1.2em;
+}
+
+.navbar {
+/*	border-bottom: 1px solid #333;*/
+	border-radius: 0px !important;
+}
+
+.navbar a {
+	color: #333;
+}
+
+
+

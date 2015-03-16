@@ -1,0 +1,128 @@
+/*This gets the banner image right up under the navbar; better to change the navbar margin?*/
+.banner {
+	margin-top: -20px;
+}
+.banner img {
+	max-height: 500px;
+	width: 100%;
+}
+
+/* Index page specific */
+
+h2 {
+/*	background-color: #333;*/
+/*	position: absolute;*/
+/*	color: white;*/
+	border-bottom: 3px solid #333;
+/*	padding-top: 2px;*/
+/*	padding-right: 5px;*/
+/*	padding-bottom: 0px;*/
+/*	padding-left: 5px;*/
+}
+
+.entry-content {
+	position: relative;
+/*	border-top: 3px solid #333;*/
+	font-size: 1.3em;
+}
+
+.entry-content .caption {
+  text-align: center;
+}
+
+ul {
+  list-style-position: inside;
+} 
+
+.arrow-next:hover, .arrow-prev:hover {
+  cursor: pointer;
+}
+
+.trips {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.trip {
+  color: #222;
+/*  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9);*/
+  border-spacing: 2px;
+  border-color: #808080 #808080 #E5E5E5;
+/*  font-family: arial,sans-serif;*/
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.active-photo .description {
+    background: none repeat scroll 0% 0% rgba(224, 224, 224, 1.0);
+}
+
+.description {
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.trips .row {
+    margin: 0px;
+}
+
+.description .location {
+    font-weight: bold;
+}
+
+.description p {
+    margin: 0px;
+}
+
+.active-photo .photo {
+    display: block;
+}
+
+.photo {
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.slide {
+  display: none;
+}
+
+.active-slide {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+}
+
+.photo .col-sm-3 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* footer */
+
+#copyright {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.welcome {
+	background-image: url('/resources/welcome2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 512px;
+	margin-top: 50px;
+	position: relative;
+	border: 0px solid #dbdbdb;
+}
+
+.welcome .welcomecontainer {
+	padding-top: 75px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+}
+
+.welcome h1 {
+	font-size: 42px;
+	font-family: 'Permanent Marker', sans-serif;
+}
+
+.welcome p {
+	font-size: 24px;
+	font-family: 'Walter Turncoat', sans-serif;
+}
+
+.bottle_selections {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.beerwall img {
+	height: 300px;
+}
+
+@media all and (max-width: 700px) {
+	body {
+		background-color: black;
+	} 
+	.welcome p {
+		font-size: 11px;
+	}
+}
+/* this nifty bit makes the dropdown menus scrollable*/
+.scrollable-menu {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}

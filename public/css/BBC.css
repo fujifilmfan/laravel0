@@ -1,0 +1,355 @@
+body {
+    margin: 0;
+    font-family: Arial Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#topbar {
+    background: rgba(123, 0, 0, 1);
+    width: 100%;
+    height: 40px;
+    color: white;
+}
+
+.fixedwidth {
+    width: 975px;
+    /*height: 40px;*/
+    /*this centers the div within another div*/
+    margin: 0 auto;
+}
+
+#logodiv {
+    height: 40px;
+    float: left;
+    border-right: 1px solid;
+    border-right-color: rgba(137, 23, 20, 1);
+    margin-left: 3px;
+    padding-right: 3px;
+}
+
+#spacer {
+    width: 180px;
+    height: 40px;
+    float: left;
+    border-right: 1px solid;
+    border-right-color: rgba(137, 23, 20, 1);
+}
+
+#topmenudiv {
+    float: left;
+}
+
+#topmenudiv ul {
+    margin: 0;
+    padding: 0;
+}
+
+#topmenudiv li {
+    height: 100%;
+    float: left;
+    list-style: none;
+
+    font-weight: bold;
+    font-size: .8em;
+
+    border-right: 1px solid;
+    border-color: rgba(137, 23, 20, 1);
+
+    padding: 11px 12px 14px 12px;
+}
+
+#searchdiv {
+    float: left;
+    padding: 8px;
+}
+
+#searchdiv input {
+    height: 20px;
+    border: none;
+    padding: 2px 0 2px 9px;
+    font-weight: bold;
+    background-image: url("/resources/projects/BBC/search.png");
+    background-repeat: no-repeat;
+    /*background-*/
+    background-position: right center;
+}
+
+.break {
+    clear:both;
+}
+
+#newsbar {
+    background: rgba(155, 0, 0, 1);
+    width: 100%;
+    height: 88px;
+}
+
+#newsbar p {
+    margin: 0;
+    padding: 0;
+    padding-top: 8px;
+    padding-left: 6px;
+    float: left;
+}
+
+#newsheader {
+    color: white;
+    font-size: 2.7em;
+    font-weight: 300;
+
+}
+
+#UK {
+    font-size: 0.65em;
+    font-weight: 300;
+    padding-left: 21px;
+}
+
+#rss {
+    font-size: 0.8em;
+    font-weight: 300;
+    float: right;
+    margin-top: 35px;
+    margin-right: 5px;
+}
+
+#rss img {
+    padding-left: 3px;
+}
+
+#topicmenu {
+    /*height: 24px;*/
+    float: left;
+    background: rgba(63, 11, 12, 1);
+    margin-top: 6px;
+}
+
+#topicmenu ul {
+    height: 14px;
+    margin: 0;
+    padding: 5px;
+}
+
+#topicmenu li {
+    float: left;
+    list-style: none;
+
+    font-size: .7em;
+    font-weight: 300;
+
+    border-right: 1px solid;
+    border-color: rgba(137, 23, 20, 1);
+    padding-left: 8px;
+    padding-right: 8px;
+    /*            padding: 5px;*/
+    /*            padding: 4px 8px 0 8px;*/
+}
+
+#topicmenu .selected {
+    background-color: rgba(237, 237, 237, 1);
+    height: 19px;
+    position: relative;
+    margin-top: -4px;
+    padding-top: 5px !important
+}
+
+#topicmenu .selected a {
+    font-weight: bold !important;
+    color: rgba(80, 80, 80, 1) !important; 
+}
+
+#topicmenu a:visited {
+    color: white;
+}
+
+#topicmenu a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    width: 100%;
+    color: rgba(98, 98, 98, 1);
+    font-size: 0.75em;
+}
+
+
+h1 a:visited {
+    color: rgba(72, 112, 149, 1);
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+.date {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: rgba(28, 78, 132, 1);
+}
+
+.headlineimage {
+    float: left;
+}
+
+.newsitem {
+    position: relative;
+    left: 20px;
+
+    width: 250px;
+    float: left;
+    font-size: 1.1em;
+}
+
+.newsitem a {
+    color: rgba(28, 78, 132, 1);
+}
+
+.newsitem a:hover {
+    text-decoration: underline;
+}
+
+.newsitem a:visited {
+    color: rgba(72, 112, 149, 1);
+}
+
+.video {
+    background-image: url("/resources/projects/BBC/triangle.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;      
+}
+
+.newsitem p {
+    padding: 0 20px 5px 0;
+    margin: 0;
+}
+
+#watchlisten {
+    background-color: rgba(238, 238, 238, 1);
+    float: right;
+    width: 336px;
+    height: 212px;
+    position: relative;
+    top: -70px;
+}
+
+#watchlisten a:hover {
+    text-decoration: underline;
+}
+
+/*        general h2 because probably only type needed*/
+h2 {
+    color: rgba(80, 80, 80, 1);
+    margin-top: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 1.9em;
+}
+
+.boxes {
+    float: right;
+    margin: 20px 10px 0 0;
+}
+
+.leftarrow {
+    float: left;
+    border-right: 1px solid;
+    border-right-color: rgba(237, 237, 237, 1);
+}
+
+.wlblock {
+    float: left;
+    background-color: rgba(211, 112, 0, 1);
+    width: 143px;
+    height: 124px;
+    border-right: 1px solid;
+    border-right-color: rgba(237, 237, 237, 1);
+}
+
+.wlblock p {
+    padding: 0;
+    margin: 0 0 0 10px;
+}
+
+.wlblock a {
+    color: rgba(254, 252, 250, 1);
+    font-weight: 200;
+}
+
+.wlblock a:visited {
+    color: rgba(254, 252, 250, 1);
+}
+
+.rightarrow {
+    float: right;
+}
+
+.live {
+    color: white;
+    background-color: rgba(248, 47, 34, 1);
+    padding: 0 2px;
+}
+
+.livelink {
+    color: rgba(28, 78, 132, 1);
+    font-weight: bold;
+}
+
+#watchlisten > p {
+    margin: 10px 0 0 10px;
+    padding: 0;
+}
+
+.separator {
+    margin-top: 50px;
+}
+
+#original {
+    width: 100%;
+}
+
+#screenshot {
+    display: table;
+    margin: 0 auto;
+}
+
+/* footer */
+
+#copyright {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+.sidebar hr {
+	display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+/*    border-style: inset;
+    border-width: 1px;*/
+    border: 0;
+    height: 1.5px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+/*This is for the banner caption.*/
+.sidebar .caption {
+	font-size: .8em;
+}
+
+/*Sidebar social media icons*/
+.sidebar-header img {
+	height: 32px;
+}
+
+.sidebar-header .description {
+	text-align: left;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.sidebar-header .col-sm-2 {
+	padding-left: 0px;
+	padding-right: 5px;
+}
+
+.sidebar-header .col-sm-10 {
+	padding-left: 5px;
+}
+
+#twitter-widget-0 {
+	width: 100% !important;
+	min-width: 0px !important;
+}
+
+#linkroll_title {
+	font-size: 14px !important;
+	text-decoration: none !important;
+	color: #333 !important;
+/*Twitter link blue:*/
+	/*color: #0084B4 !important;*/
+}
