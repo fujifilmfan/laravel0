@@ -11,7 +11,7 @@
 |
 */
 
-
+// 6: Blade Basics
 // get all users from our database
 Route::get('users', function()
 {

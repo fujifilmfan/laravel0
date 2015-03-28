@@ -13,77 +13,84 @@
 		</div>
 	</div>
 
+<!-- BEGIN DROPDOWN MENUS -->
+
+	<!-- TYPE -->
 	<div class="btn-group">
-<!--Changed id="beertype" to id="type" on 2014-11-14 - keep an eye out that this didn't break something-->
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="type">
 			<span class="selection">Type</span> <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu scrollable-menu" role="menu">
 			<li><a href="#" class="beertype">Type</a></li>
-<!--Populate dropdown menu from the database; items have the class "beertype" -->
-<!-- 			<?php 
-				// $buttonGroup = "type";
-				// include "includes/bottles-pageload-dd-all.php";
-			?> -->
+			<!--Populate dropdown menu from the database; items have the class "beertype" -->
+			@foreach ($types as $type)
+				<li><a href="#" class="beertype">{{ $type->beer_type }}</a></li>
+			@endforeach
 		</ul>
 	</div>
+
+	<!-- BREWERY -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="brewery">
 			<span class="selection">Brewery</span> <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu scrollable-menu" role="menu">
 			<li><a href="#" class="brewery">Brewery</a></li>
-<!--Populate dropdown menu from the database; items have the class "brewery" -->
-<!-- 			<?php 
-				// $buttonGroup = "brewery";
-				// include "includes/bottles-pageload-dd-all.php";
-			?> -->
+			<!--Populate dropdown menu from the database; items have the class "brewery" -->
+			@foreach ($breweries as $brewery)
+				<li><a href="#" class="brewery">{{ $brewery->short_name }}</a></li>
+			@endforeach
 		</ul>
 	</div>
+
+	<!-- STATE -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="state">
 			<span class="selection">State</span> <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="#" class="state">State</a></li>
-<!--Populate dropdown menu from the database; items have the class "state" -->
-<!-- 			<?php 
-				// $buttonGroup = "state";
-				// include "includes/bottles-pageload-dd-all.php";
-			?> -->
+			<!--Populate dropdown menu from the database; items have the class "state" -->
+			@foreach ($states as $state)
+				<li><a href="#" class="state">{{ $state->region }}</a></li>
+			@endforeach
 		</ul>
 	</div>
+
+	<!-- PROVINCE -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="province">
 			<span class="selection">Province</span> <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="#" class="province">Province</a></li>
-<!--Populate dropdown menu from the database; items have the class "province" -->
-<!-- 			<?php 
-				// $buttonGroup = "province";
-				// include "includes/bottles-pageload-dd-all.php";
-			?> -->
+			<!--Populate dropdown menu from the database; items have the class "province" -->
+			@foreach ($provinces as $province)
+				<li><a href="#" class="province">{{ $province->region }}</a></li>
+			@endforeach
 		</ul>
 	</div>
+
+	<!-- COUNTRY -->
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="country">
 			<span class="selection">Country</span><span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="#" class="country">Country</a></li>
-<!--Populate dropdown menu from the database; items have the class "country" -->
-<!-- 			<?php 
-				// $buttonGroup = "country";
-				// include "includes/bottles-pageload-dd-all.php";
-			?> -->
+			<!--Populate dropdown menu from the database; items have the class "country" -->
+			@foreach ($countries as $country)
+				<li><a href="#" class="country">{{ $country->country }}</a></li>
+			@endforeach
 		</ul>
 	</div>
 
+<!-- END DROPDOWN MENUS -->
+
 	<div class="beerwall">
-<!-- 		<?php
-			// include "includes/bottles-query-selections.php";
-		?> -->
+		@foreach ($photos as $photo)
+			<img src="resources/bottles/{{ $photo->photo_ID }}.jpg">
+		@endforeach
 	</div>
 
 @stop

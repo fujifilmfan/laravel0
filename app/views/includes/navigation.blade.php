@@ -19,7 +19,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="bottles">Beer Wall</a></li>
-				<li><a href="projects">Projects</a></li>
+				<li><a href="/projects">Projects</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

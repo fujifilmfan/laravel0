@@ -15,34 +15,49 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/bottles', 'PagesController@bottles');
+Route::get('bottles', 'PagesController@bottles');
 
-Route::get('/projects', 'PagesController@projects');
+Route::get('beers', 'PagesController@beers');
 
-Route::get('/Flipboard', 'PagesController@flipboard');
+// why can I use 'beername' here and not 'beer_name'?
+Route::get('beers/{beername}', 'PagesController@beerDetail');
 
-Route::get('/news_reader', 'PagesController@newsReader');
+Route::get('firstMethod', 'PagesController@firstMethod');
 
-Route::get('/Airbnb', 'PagesController@airbnb');
+Route::get('loadNames/{beername}', 'PagesController@loadNames');
 
-Route::get('/BBC', 'PagesController@BBC');
+Route::get('thirdMethod', 'PagesController@thirdMethod');
 
-// Route::get('/beer', function()
-// {
-// 	$pageID = 'beer';
-// 	$bottles = Bottle::all();
+Route::get('api/dropdown', 'PagesController@dropdown');
 
-// 	return View::make('pages.beer', compact('pageID', 'bottles'));
+Route::resource('projects', 'ProjectsController');
+
+Route::resource('bottles', 'BottlesController');
+
+Route::get('about', function()
+{
+	return View::make('about');
+});
+
+
+// Route::get('beers', function(){
+// 	$pageID = 'beers';
+// 	$bottles = Bottle::orderby('beer_name')->get();
+
+// 	// if ('option' == "") {
+// 	// 	$input = "Stone Brewing Co.";
+// 	// }
+
+// 	$input = Input::get('option');
+
+// 	$brewery = Brewery::find($input);
+// 	$list = Bottle::where('short_name', '=', $brewery);
+
+// 	return View::make('pages.beers', compact('pageID', 'bottles'));
+// 	return Response::make($list->get(['beer_name', 'beer_type']));
 // });
 
-// Route::get('/{beername}', function($beername)
-// {
-// 	$pageID = $beername;
-// 	$bottle = Bottle::where('beer_name', $beername)->first();
 
-// 	return View::make('pages.show', compact('pageID', 'bottle'));
-// 	// return View::make('pages.show', ['bottle' => $bottle]);
-// });
 
 // Route::get('/test', 'PagesController@test');
 
