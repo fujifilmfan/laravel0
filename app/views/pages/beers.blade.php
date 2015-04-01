@@ -9,36 +9,63 @@
 			<p>{{ $bottle }}</p>
 		@endforeach -->
 
-<!-- 		<h1>Dropdown demo</h1>
-		{{ Form::open() }}
-		<select id='brewery' name="brewery">
-			<option>Select Brewery</option>
-			<option value='1'>Stone</option>
-			<option value='2'>Stone Brewing Co.</option>
-			<option value='3'>New Belgium</option>
-		</select>
-		<br>
-		<select id="bottle" name="bottle">
-			<option>Please select brewery first</option>
-		</select>
-		{{ Form::close(); }} -->
-
-		<p>{{ $bottlesTest }}</p>
-
+		<p>Bottle ID: {{ $bottlesTest->bottle_ID }}</p>
+		<p>Raw output: {{ $bottlesTest }}</p>
+		<p>Breweries associated with bottle {{ $bottlesTest->bottle_ID }}:</p>
+		<p>Raw output ($my_breweries): {{ $my_breweries }}</p>
+		<p>Raw output (list):</p>
 		@foreach ($my_breweries as $my_brewerie)
-
+			<li>{{ $my_brewerie }}</li>
+		@endforeach
+		<br />
+		<p>Just the short names from raw output:</p>
+		@foreach ($my_breweries as $my_brewerie)
 			<li>{{ $my_brewerie->short_name }}</li>
-
 		@endforeach
 
-		<p>{{ $breweriesTest }}</p>
+		<hr />
 
+		<p>Raw output ($test8s): {{ $test8s }}</p>
+
+		<hr />
+		
+		<p>Raw output ($test3s): {{ $test3s }}</p>
+		<p>Raw output (list):</p>
+		@foreach ($test3s as $test3)
+			<li>{{ $test3 }}</li>
+		@endforeach
+		<br />
+		<p>Just the short names:</p>
+		@foreach ($test3s as $test3)
+			<li>{{ $test3->short_name }}</li>
+		@endforeach
+		<br />
+
+		<hr />
+
+	
+
+		<hr />
+
+
+
+		<p>Brewery ID: {{ $breweriesTest->brewery_ID }}</p>
+		<p>Raw output: {{ $breweriesTest }}</p>
+		<p>Bottles associated with brewery {{ $breweriesTest->brewery_ID }}:<p/>
 		@foreach ($my_bottles as $my_bottle)
-
 			<li>{{ $my_bottle->beer_name }}</li>
-
 		@endforeach
 
+		<hr />
+
+
+
+
+
+
+
+
+		<hr />
 		<!-- use an if statement first to provide a message if the set is empty -->
 		@foreach ($bottles as $bottle)
 

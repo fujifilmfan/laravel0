@@ -34,4 +34,10 @@ class Bottle extends Eloquent {
 	{
 		return $query->select('beer_type')->distinct()->orderby('beer_type');
 	}
+
+	public function photos()
+	{
+		// bottle_ID is the foreign key in the photo table
+		return $this->hasMany('Photo', 'bottle_ID');
+	}
 }

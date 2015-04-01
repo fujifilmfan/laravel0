@@ -6,5 +6,5 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 {{ HTML::script('js/' . $pageID . '.js'); }}
-
+<br /><br /><br /><br />
 <div id="copyright">© Copyright 2015 Kurt Klein</div>

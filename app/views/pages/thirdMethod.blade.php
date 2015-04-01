@@ -3,7 +3,7 @@
 	<h2>All Bottles</h2>
 	<br />
 	<br />
-	<div class="beerwall">
+	<div>
 
 		{{ Form::open() }}
 			<select id="cat" name="category" data-url="{{ url('api/dropdown')}}">
@@ -22,4 +22,85 @@
 
 	</div>
 
+<!-- BEGIN DROPDOWN MENUS -->
+
+	<!-- TYPE -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="beertype">
+			<span class="selection">Type</span> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu scrollable-menu" role="menu">
+				<li><a href="#" class="beertype">Type</a></li>
+			<!--Populate dropdown menu from the database; items have the class "beertype" -->
+			@foreach ($types as $type)
+				<li><option value="{{ $type->beer_type }}" class="beertype">{{ $type->beer_type }}</option></li>
+			@endforeach
+		</ul>
+	</div>
+
+	<!-- BREWERY -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="brewery">
+			<span class="selection">Brewery</span> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu scrollable-menu" role="menu">
+				<li><a href="#" class="brewery">Brewery</a></li>
+			<!--Populate dropdown menu from the database; items have the class "brewery" -->
+			@foreach ($breweries as $brewery)
+				<li><option value="{{ $brewery->short_name }}" class="brewery">{{ $brewery->short_name }}</option></li>
+			@endforeach
+		</ul>
+	</div>
+
+	<!-- STATE -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="state">
+			<span class="selection">State</span> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+				<li><a href="#" class="state">State</a></li>
+			<!--Populate dropdown menu from the database; items have the class "state" -->
+			@foreach ($states as $state)
+				<li><option value="{{ $state->region }}" class="state">{{ $state->region }}</option></li>
+			@endforeach
+		</ul>
+	</div>
+
+	<!-- PROVINCE -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="province">
+			<span class="selection">Province</span> <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+				<li><a href="#" class="province">Province</a></li>
+			<!--Populate dropdown menu from the database; items have the class "province" -->
+			@foreach ($provinces as $province)
+				<li><option value="{{ $province->region }}" class="province">{{ $province->region }}</option></li>
+			@endforeach
+		</ul>
+	</div>
+
+	<!-- COUNTRY -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="country">
+			<span class="selection">Country</span><span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+				<li><a href="#" class="country">Country</a></li>
+			<!--Populate dropdown menu from the database; items have the class "country" -->
+			@foreach ($countries as $country)
+				<li><option value="{{ $country->country }}" class="country">{{ $country->country }}</option></li>
+			@endforeach
+		</ul>
+	</div>
+
+<!-- END DROPDOWN MENUS -->
+
+	<div class="beerwall">
+
+
+	</div>
+
 @stop
+
+

@@ -22,4 +22,9 @@ class Photo extends Eloquent {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	public function bottles()
+	{
+		// bottle_ID is the foreign key in the photo table
+		return $this->belongsTo('Bottle', 'bottle_ID');
+	}
 }

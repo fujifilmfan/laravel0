@@ -9,7 +9,25 @@ class BottlesController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$pageID = 'bottles';
+		// scopes defined in the relevant models:
+		$types = Bottle::beerType()->get();
+		$breweries = Brewery::brewery()->get();
+		$states = Brewery::region('=')->get();
+		$provinces = Brewery::region('!=')->get();
+		$countries = Brewery::country()->get();
+
+
+		$photos = Photo::where('angle', 'front')->get();
+
+		return View::make('pages/bottles')
+			->with('pageID', $pageID)
+			->with('types', $types)
+			->with('breweries', $breweries)
+			->with('states', $states)
+			->with('provinces', $provinces)
+			->with('countries', $countries)
+			->with('photos', $photos);
 	}
 
 
@@ -20,7 +38,8 @@ class BottlesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$pageID = 'create';
+		return View::make('pages.create')->with('pageID', $pageID);
 	}
 
 
@@ -31,7 +50,7 @@ class BottlesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		return 'add the new bottle given the post data';
 	}
 
 

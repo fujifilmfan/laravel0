@@ -15,8 +15,6 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('bottles', 'PagesController@bottles');
-
 Route::get('beers', 'PagesController@beers');
 
 // why can I use 'beername' here and not 'beer_name'?
@@ -29,6 +27,12 @@ Route::get('loadNames/{beername}', 'PagesController@loadNames');
 Route::get('thirdMethod', 'PagesController@thirdMethod');
 
 Route::get('api/dropdown', 'PagesController@dropdown');
+
+Route::get('contactForm', 'PagesController@contactForm');
+
+Route::get('returnPhotos', 'PagesController@returnPhotos');
+
+Route::get('filterDropdowns', 'PagesController@filterDropdowns');
 
 Route::resource('projects', 'ProjectsController');
 

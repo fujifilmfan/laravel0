@@ -17,6 +17,11 @@ h2 {
 	height: 300px;
 }
 
+hr {
+	height: 1px;
+	background: #333;
+}
+
 /* footer */
 
 #copyright {

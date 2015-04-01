@@ -27,7 +27,7 @@ class Brewery extends Eloquent {
 	public function bottles()
 	{
 		// if I used conventional names, I would not need to override the pivot table name and keys here
-		// the order of the keys matters
+		// the order of the keys matters - why?
 		return $this->belongsToMany('Bottle', 'bottlebrewery', 'brewery_ID', 'bottle_ID');
 	}
 

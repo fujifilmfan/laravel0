@@ -1,0 +1,30 @@
+.form-control {
+	max-width: 640px;
+}
+
+.myEmailForm {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.emailForm {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+textarea {
+    height: 120px;
+}
+
+form {
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* footer */
+
+#copyright {
+  text-align: center;
+}
