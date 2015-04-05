@@ -36,13 +36,23 @@ class Brewery extends Eloquent {
 		return $query->select('short_name')->distinct()->orderby('short_name');
 	}
 
-	public function scopeRegion($query, $truth)
+	public function scopeRegion($query, $bool)
 	{
-		return $query->select('region')->where('country', $truth, 'USA')->distinct()->orderby('region');
+		return $query->select('region')->where('country', $bool, 'USA')->distinct()->orderby('region');
 	}
 
 	public function scopeCountry($query)
 	{
 		return $query->select('country')->distinct()->orderby('country');
+	}
+
+	public function scopeFilteredStates($query, $brewery)
+	{
+		return $query->select('region')->where('country', '=', 'USA')->where('short_name', '=', $brewery)->distinct()->orderby('region');
+	}
+
+	public function scopeFilteredBreweries($query, $state)
+	{
+		return $query->select('short_name')->where('region', '=', $state)->distinct()->orderby('short_name');
 	}
 }

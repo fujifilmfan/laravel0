@@ -18,20 +18,54 @@ class PagesController extends BaseController {
 	{
 		Log::info(Input::all());
 
-		// $data = Input::all();  // could also use Input::only('brewery') or Input::get('brewery')
-
 		// $selectedBeertype = Input::get('beertype');
 		$selectedBrewery = Input::get('brewery');
 		$selectedState = Input::get('state');
 		// $selectedProvince = Input::get('province');
 		// $selectedCountry = Input::get('country');
-		// $selectedCategory = Input::get('category');
+		$selectedCategory = Input::get('category');
 
+		switch ($selectedCategory)
+			{
+				// case 'beertype':
+				// 	break;
+				case 'brewery':
+					$states = Brewery::filteredStates($selectedBrewery)->get();
+					$breweries = Brewery::brewery()->get();
+					break;
+				case 'state':
+					$breweries = Brewery::filteredBreweries($selectedState)->get();
+					$states = Brewery::region('=')->get();
+					break;
+				// case 'province':
+				// 	break;
+				// case 'country':
+				// 	break;
+				// default:
+			}
+
+		// $brewery = Brewery::where('short_name', $selectedBrewery)->get();
+
+		// for ($i = 0; $i < count($brewery); $i++)
+		// 	{
+		// 		$bottle[] = $brewery[$i]->bottles()->get();
+		// 	}
+
+		// for ($i = 0; $i < count($bottle); $i++)
+		// 	{
+		// 		for ($j = 0; $j < count($bottle[$i]); $j++)
+		// 			{
+		// 				$test2[] = $bottle[$i][$j]; // ['beer_name'];
+		// 			}
+		// 	}
+
+		return Response::make($breweries);
+
+		// $data = Input::all();  // could also use Input::only('brewery') or Input::get('brewery')
 		//$brewery = $data['brewery'];
 		// $count = count($data); <- works
 
 		// $brewery = Brewery::where('short_name', $data['brewery'])->first();
-		$brewery = Brewery::where('short_name', $selectedBrewery)->get();
 
 		// foreach ($brewery as $brewery)
 		// 	{
@@ -39,20 +73,6 @@ class PagesController extends BaseController {
 		// 	}
 		//$bottle = $brewery->bottles()->get();
 
-		for ($i = 0; $i < count($brewery); $i++)
-			{
-				$bottle[] = $brewery[$i]->bottles()->get();
-			}
-
-		for ($i = 0; $i < count($bottle); $i++)
-			{
-				for ($j = 0; $j < count($bottle[$i]); $j++)
-					{
-						$test2[] = $bottle[$i][$j]; // ['beer_name'];
-					}
-			}
-
-		return Response::make($test2);
 		// return Response::json(array('name' => 'Steve', 'state' => 'CA'));
 		// return Response::make('qualified success');
 	}
