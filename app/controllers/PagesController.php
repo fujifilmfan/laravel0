@@ -18,28 +18,42 @@ class PagesController extends BaseController {
 	{
 		Log::info(Input::all());
 
-		// $myData = file_get_contents('php://input');
-		// $decoded = json_decode($myData);
+		// $data = Input::all();  // could also use Input::only('brewery') or Input::get('brewery')
 
-		$data = Input::all();
-		//$data = Input::only('brewery');
-		
+		// $selectedBeertype = Input::get('beertype');
+		$selectedBrewery = Input::get('brewery');
+		$selectedState = Input::get('state');
+		// $selectedProvince = Input::get('province');
+		// $selectedCountry = Input::get('country');
+		// $selectedCategory = Input::get('category');
+
 		//$brewery = $data['brewery'];
 		// $count = count($data); <- works
 
-		// $input = Input::get('brewery');
+		// $brewery = Brewery::where('short_name', $data['brewery'])->first();
+		$brewery = Brewery::where('short_name', $selectedBrewery)->get();
 
-		$brewery = Brewery::where('short_name', $data['brewery'])->first();
+		// foreach ($brewery as $brewery)
+		// 	{
+		// 		$bottle = $brewery->bottles()->get();
+		// 	}
+		//$bottle = $brewery->bottles()->get();
 
-		$bottle = $brewery->bottles()->get();
+		for ($i = 0; $i < count($brewery); $i++)
+			{
+				$bottle[] = $brewery[$i]->bottles()->get();
+			}
 
-		// for ($i = 0; $i < count($bottle); $i++)
-		//     {
-		//         $test2[] = $bottle[$i]['beer_name'];
+		for ($i = 0; $i < count($bottle); $i++)
+			{
+				for ($j = 0; $j < count($bottle[$i]); $j++)
+					{
+						$test2[] = $bottle[$i][$j]; // ['beer_name'];
+					}
+			}
 
-		//     }
-		
-		return Response::make($bottle);
+		return Response::make($test2);
+		// return Response::json(array('name' => 'Steve', 'state' => 'CA'));
 		// return Response::make('qualified success');
 	}
 
@@ -101,10 +115,10 @@ class PagesController extends BaseController {
 		$bottle = $brewery->bottles()->get();
 
 		for ($i = 0; $i < count($bottle); $i++)
-		    {
-		        $test2[] = $bottle[$i]['beer_name'];
+			{
+				$test2[] = $bottle[$i]['beer_name'];
 
-		    }
+			}
 		// return $test2;
 
 
