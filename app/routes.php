@@ -34,6 +34,9 @@ Route::get('returnPhotos', 'PagesController@returnPhotos');
 
 Route::get('filterDropdowns', 'PagesController@filterDropdowns');
 
+Route::get('filterOne', 'PagesController@filterOne');
+Route::get('optionOne', 'PagesController@optionOne');
+
 Route::resource('projects', 'ProjectsController');
 
 Route::resource('bottles', 'BottlesController');

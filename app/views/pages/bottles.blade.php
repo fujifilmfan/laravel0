@@ -15,78 +15,39 @@
 
 <!-- BEGIN DROPDOWN MENUS -->
 
-	<!-- TYPE -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="type">
-			<span class="selection">Type</span> <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu scrollable-menu" role="menu">
-			<li><a href="#" class="beertype">Type</a></li>
-			<!--Populate dropdown menu from the database; items have the class "beertype" -->
-			@foreach ($types as $type)
-				<li><a href="#" class="beertype">{{ $type->beer_type }}</a></li>
-			@endforeach
-		</ul>
-	</div>
-
-	<!-- BREWERY -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="brewery">
-			<span class="selection">Brewery</span> <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu scrollable-menu" role="menu">
-			<li><a href="#" class="brewery">Brewery</a></li>
-			<!--Populate dropdown menu from the database; items have the class "brewery" -->
-			@foreach ($breweries as $brewery)
-				<li><a href="#" class="brewery">{{ $brewery->short_name }}</a></li>
-			@endforeach
-		</ul>
-	</div>
-
-	<!-- STATE -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="state">
-			<span class="selection">State</span> <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="#" class="state">State</a></li>
-			<!--Populate dropdown menu from the database; items have the class "state" -->
-			@foreach ($states as $state)
-				<li><a href="#" class="state">{{ $state->region }}</a></li>
-			@endforeach
-		</ul>
-	</div>
-
-	<!-- PROVINCE -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="province">
-			<span class="selection">Province</span> <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="#" class="province">Province</a></li>
-			<!--Populate dropdown menu from the database; items have the class "province" -->
-			@foreach ($provinces as $province)
-				<li><a href="#" class="province">{{ $province->region }}</a></li>
-			@endforeach
-		</ul>
-	</div>
-
-	<!-- COUNTRY -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="country">
-			<span class="selection">Country</span><span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="#" class="country">Country</a></li>
-			<!--Populate dropdown menu from the database; items have the class "country" -->
-			@foreach ($countries as $country)
-				<li><a href="#" class="country">{{ $country->country }}</a></li>
-			@endforeach
-		</ul>
-	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="btn-group col-sm-4" role="group">
+				<div class="btn-group btn-group-lg" role="group" id="filter_1">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span class="selection">Select a filter </span><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<option value="default">Select a filter </option>
+						<option value="beertype">Beer Type </option>
+						<option value="brewery">Brewery </option>
+						<option value="state">State </option>
+						<option value="province">Province </option>
+						<option value="country">Country </option>
+					</ul>
+				</div> <!-- filter_1 -->
+				<div class="btn-group btn-group-lg" role="group" id="options_1">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span class="selection">(choose a filter first) </span><span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu scrollable-menu" role="menu">
+						<option value="default">(choose a filter first) </option>
+					</ul>
+				</div> <!-- options_1 -->
+			</div> <!-- btn-group -->
+			<div class="col-sm-4"></div>
+		</div> <!-- row -->
+	</div> <!-- container-fluid -->
 
 <!-- END DROPDOWN MENUS -->
 
+	<br /><br />
 	<div class="beerwall">
 		@foreach ($photos as $photo)
 			<img src="resources/bottles/{{ $photo->photo_ID }}.jpg">

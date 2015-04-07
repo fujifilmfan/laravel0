@@ -20,6 +20,92 @@ $(document).ready(function($)
 						});
 			});
 
+		$('#filter_1').change(function()
+		{
+
+			var options = $('#options_1');
+
+			if ($(this).val() == 'default')
+			{
+				var category = '';
+				options.empty();
+				options.append("<option value='default'>Choose a filter first</option>");
+			}
+			else
+			{
+				var category = $(this).val();
+				// for troubleshooting
+				console.log("category: " + category);
+
+				$.ajax(
+				{
+					type: 'GET',
+					url: 'filterOne',
+					data: { category: category, },
+					dataType: 'JSON', // dataType to send
+					success: function(response)
+					{
+						// for troubleshooting
+						console.log('response: \n' + response);
+						
+						options.empty();
+						if (category == 'beertype')
+						{
+							category = 'beer type';
+						}
+						options.append("<option value='" + category + "'>" + "Select your " + category + "</option");
+						$.each(response, function(index, element)
+						{
+							options.append("<option value='" + element + "'>" + element + "</option");
+						});
+					}
+				});
+			}
+		});
+
+		$('#options_1').change(function()
+		{
+
+			var category = $('#filter_1 option:selected').val();
+			// for troubleshooting
+			console.log("category: " + category);
+
+			if ($(this).val() == 'default')
+			{
+				var selection = '';
+			}
+			else
+			{
+				var selection = $(this).val();
+				// for troubleshooting
+				console.log("selection: " + selection);
+
+				$.ajax(
+				{
+					type: 'GET',
+					url: 'optionOne',
+					data: 
+					{
+						category: category,
+						selection: selection,
+
+					},
+					dataType: 'JSON', // dataType to send
+					success: function(response)
+					{
+						// for troubleshooting
+						console.log('response: \n' + response);
+						
+						options.empty();
+						options.append("<option value='" + selection + "'>" + "Select your " + selection + "</option");
+						$.each(response, function(index, element)
+						{
+							options.append("<option value='" + element + "'>" + element + "</option");
+						});
+					}
+				});
+			}
+		});
 
 		$(".dropdown-menu li option").click(function()
 			{

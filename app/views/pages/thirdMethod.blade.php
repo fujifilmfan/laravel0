@@ -22,6 +22,20 @@
 
 	</div>
 
+	<div class="form-group">
+		<select id="filter_1" class="form-control">
+			<option value="default">Select a filter</option>
+			<option value="beertype">Beer Type</option>
+			<option value="brewery">Brewery</option>
+			<option value="state">State</option>
+			<option value="province">Province</option>
+			<option value="country">Country</option>
+		</select>
+		<!-- onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=1;' onblur="this.size=1;" -->
+		<select id="options_1" class="form-control">
+			<option value="default">Choose a filter first</option>
+		</select>
+	</div>
 <!-- BEGIN DROPDOWN MENUS -->
 
 	<!-- TYPE -->

@@ -39,22 +39,16 @@
 	font-family: 'Walter Turncoat', sans-serif;
 }
 
-.bottle_selections {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .beerwall img {
 	height: 300px;
 }
 
 @media all and (max-width: 700px) {
-	body {
+/*	body {
 		background-color: black;
-	} 
+	} */
 	.welcome p {
-		font-size: 11px;
+		font-size: 14px;
 	}
 }
 /* this nifty bit makes the dropdown menus scrollable*/
@@ -62,4 +56,9 @@
     height: auto;
     max-height: 500px;
     overflow-x: hidden;
+}
+
+/* footer */
+#copyright {
+  text-align: center;
 }

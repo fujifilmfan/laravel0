@@ -27,4 +27,9 @@ class Photo extends Eloquent {
 		// bottle_ID is the foreign key in the photo table
 		return $this->belongsTo('Bottle', 'bottle_ID');
 	}
+
+	public function scopeGetPhotos($query, $bottle_ID)
+	{
+		return $query->select('photo_ID')->where('bottle_ID', '=', $bottle_ID)->where('angle', '=', 'front');
+	}
 }
