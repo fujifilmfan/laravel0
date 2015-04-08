@@ -39,6 +39,12 @@
 	font-family: 'Walter Turncoat', sans-serif;
 }
 
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+}
+
 .beerwall img {
 	height: 300px;
 }
@@ -56,9 +62,4 @@
     height: auto;
     max-height: 500px;
     overflow-x: hidden;
-}
-
-/* footer */
-#copyright {
-  text-align: center;
 }

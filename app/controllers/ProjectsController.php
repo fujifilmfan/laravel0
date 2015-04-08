@@ -38,7 +38,7 @@ class ProjectsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 *
+	 * This shows my individual project pages.
 	 * @param  int  $id
 	 * @return Response
 	 */

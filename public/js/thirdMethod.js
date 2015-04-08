@@ -189,7 +189,10 @@ $(document).ready(function($)
 	});
 
 
-
+			// function(response)
+			// data = $.parseJSON(data)
+			// $('').html(data.content);
+			// $('').html(data.sidebar):
 
 				// // this lagged behind the selections, I think
 				// var joinTest = $(selectors.join(' ')).text();

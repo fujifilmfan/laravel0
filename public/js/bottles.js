@@ -104,20 +104,6 @@ $(document).ready(function($)
 
 
 
-// 		$.get( "includes/bottles-query-selections.php", {
-// 			category : selectedCategory,
-// 			type : type,
-// 			brewery : brewery,
-// 			state : state,
-// 			province : province,
-// 			country : country
-// 		},
 
-// 			function(response)  {
-// 				console.log ("response: \n" + response);
-// 				$(".beerwall").html(response); // server response
-// 			}
-// 		);
-// 	});
-// };
+
  

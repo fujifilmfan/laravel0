@@ -17,8 +17,8 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="btn-group col-sm-4" role="group">
+			<!-- <div class="col-md-3 col-sm-3 col-xs-2"></div> -->
+			<div class="btn-group center" role="group">
 				<div class="btn-group btn-group-lg" role="group" id="filter_1">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 						<span class="selection">Select a filter </span><span class="caret"></span>
@@ -41,7 +41,7 @@
 					</ul>
 				</div> <!-- options_1 -->
 			</div> <!-- btn-group -->
-			<div class="col-sm-4"></div>
+			<!-- <div class="col-md-3 col-sm-3 col-xs-2"></div> -->
 		</div> <!-- row -->
 	</div> <!-- container-fluid -->
 

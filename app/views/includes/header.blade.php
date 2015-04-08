@@ -9,3 +9,4 @@
 
 {{ HTML::style('css/navigation.css'); }}
 {{ HTML::style('css/' . $pageID . '.css'); }}
+{{ HTML::style('css/footer.css'); }}

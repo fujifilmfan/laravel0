@@ -11,80 +11,36 @@
 |
 */
 
-// get request: loading a page; change the / to change the URL that loads 'hello'; @home is the method to call in the controller
+// ---------- production routes ---------- //
 
 Route::get('/', 'PagesController@index');
-
-Route::get('beers', 'PagesController@beers');
-
-// why can I use 'beername' here and not 'beer_name'?
-Route::get('beers/{beername}', 'PagesController@beerDetail');
-
-Route::get('firstMethod', 'PagesController@firstMethod');
-
-Route::get('loadNames/{beername}', 'PagesController@loadNames');
-
-Route::get('thirdMethod', 'PagesController@thirdMethod');
-
-Route::get('api/dropdown', 'PagesController@dropdown');
-
-Route::get('contactForm', 'PagesController@contactForm');
-
-Route::get('returnPhotos', 'PagesController@returnPhotos');
-
-Route::get('filterDropdowns', 'PagesController@filterDropdowns');
-
-Route::get('filterOne', 'PagesController@filterOne');
-Route::get('optionOne', 'PagesController@optionOne');
 
 Route::resource('projects', 'ProjectsController');
 
 Route::resource('bottles', 'BottlesController');
 
-Route::get('about', function()
-{
-	return View::make('about');
-});
+Route::get('filterOne', 'PagesController@filterOne');
+Route::get('optionOne', 'PagesController@optionOne');
 
+// ---------- non-production routes ---------- //
 
-// Route::get('beers', function(){
-// 	$pageID = 'beers';
-// 	$bottles = Bottle::orderby('beer_name')->get();
+Route::get('about', 'TestsController@about');
 
-// 	// if ('option' == "") {
-// 	// 	$input = "Stone Brewing Co.";
-// 	// }
+Route::get('beers', 'TestsController@beers');
 
-// 	$input = Input::get('option');
+// why can I use 'beername' here and not 'beer_name'?
+Route::get('beers/{beername}', 'TestsController@beerDetail');
 
-// 	$brewery = Brewery::find($input);
-// 	$list = Bottle::where('short_name', '=', $brewery);
+Route::get('firstMethod', 'TestsController@firstMethod');
 
-// 	return View::make('pages.beers', compact('pageID', 'bottles'));
-// 	return Response::make($list->get(['beer_name', 'beer_type']));
-// });
+Route::get('loadNames/{beername}', 'TestsController@loadNames');
 
+Route::get('thirdMethod', 'TestsController@thirdMethod');
 
+Route::get('api/dropdown', 'TestsController@dropdown');
 
-// Route::get('/test', 'PagesController@test');
+Route::get('contactForm', 'TestsController@contactForm');
 
-// Route::get('/{beername}', 'PagesController@bottlename');
+Route::get('returnPhotos', 'TestsController@returnPhotos');
 
-
-
-Route::get('test-home', function()
-{
-    return View::make('pages.test-home');
-});
-Route::get('test-about', function()
-{
-    return View::make('pages.test-about');
-});
-Route::get('test-projects', function()
-{
-    return View::make('pages.test-projects');
-});
-Route::get('test-contact', function()
-{
-    return View::make('pages.test-contact');
-});
+Route::get('filterDropdowns', 'TestsController@filterDropdowns');
