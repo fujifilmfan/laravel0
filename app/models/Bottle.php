@@ -30,11 +30,21 @@ class Bottle extends Eloquent {
 		return $this->belongsToMany('Brewery', 'bottlebrewery', 'bottle_ID', 'brewery_ID');
 	}
 
-	public function scopeBeerType($query)
+	public function scopeSpecificBeerStyle($query)
 	{
-		return $query->select('beer_type')->distinct()->orderby('beer_type');
+		return $query->select('style_specific')->distinct()->orderby('style_specific');
+	}
+	
+	public function scopeGeneralBeerStyle($query)
+	{
+		return $query->select('style_general')->distinct()->orderby('style_general');
 	}
 
+	public function scopeAlternativeBeerStyle($query)
+	{
+		return $query->select('style_alternative')->distinct()->orderby('style_alternative');
+	}
+	
 	public function photos()
 	{
 		// bottle_ID is the foreign key in the photo table

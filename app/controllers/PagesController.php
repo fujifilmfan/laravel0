@@ -14,46 +14,62 @@ class PagesController extends BaseController {
 
 		switch ($category)
 			{
-				case 'beertype':
-					$beertypes = Bottle::beerType()->get();
-					for ($i = 1; $i < count($beertypes); $i++) // why is the first element blank?
+				case 'style_specific':
+					$specificStyles = Bottle::specificBeerStyle()->get();
+					for ($i = 1; $i < count($specificStyles); $i++) // why is the first element blank?
 						{
-							$returnOptions[] = $beertypes[$i]['beer_type'];
-
+							$returnOptions[] = $specificStyles[$i]['style_specific'];
 						}
 					break;
+
+				case 'style_general':
+					$generalStyles = Bottle::generalBeerStyle()->get();
+					for ($i = 1; $i < count($generalStyles); $i++) // why is the first element blank?
+						{
+							$returnOptions[] = $generalStyles[$i]['style_general'];
+						}
+					break;
+
+				case 'style_alternative':
+					$alternativeStyles = Bottle::alternativeBeerStyle()->get();
+					for ($i = 1; $i < count($alternativeStyles); $i++) // why is the first element blank?
+						{
+							$returnOptions[] = $alternativeStyles[$i]['style_alternative'];
+						}
+					break;
+
 				case 'brewery':
 					$breweries = Brewery::brewery()->get();
 					for ($i = 1; $i < count($breweries); $i++) // why is the first element blank?
 						{
 							$returnOptions[] = $breweries[$i]['short_name'];
-
 						}
 					break;
+
 				case 'state':
 					$states = Brewery::region('=')->get();
 					for ($i = 1; $i < count($states); $i++) // why is the first element blank?
 						{
 							$returnOptions[] = $states[$i]['region'];
-
 						}
 					break;
+
 				case 'province':
 					$provinces = Brewery::region('!=')->get();
 					for ($i = 1; $i < count($provinces); $i++) // why is the first element blank?
 						{
 							$returnOptions[] = $provinces[$i]['region'];
-
 						}
 					break;
+
 				case 'country':
 					$countries = Brewery::country()->get();
 					for ($i = 1; $i < count($countries); $i++) // why is the first element blank?
 						{
 							$returnOptions[] = $countries[$i]['country'];
-
 						}
 					break;
+
 				default:
 			}
 		return Response::make($returnOptions);
@@ -66,8 +82,18 @@ class PagesController extends BaseController {
 
 		switch ($category)
 			{
-				case 'beertype':
-					$bottles = Bottle::where('beer_type', '=', $selection)->get();
+				case 'style_specific':
+					$bottles = Bottle::where('style_specific', '=', $selection)->get();
+					$returnPhotos = $this->returnPhotoIDs($bottles);
+					break;
+
+				case 'style_general':
+					$bottles = Bottle::where('style_general', '=', $selection)->get();
+					$returnPhotos = $this->returnPhotoIDs($bottles);
+					break;
+
+				case 'style_alternative':
+					$bottles = Bottle::where('style_alternative', '=', $selection)->get();
 					$returnPhotos = $this->returnPhotoIDs($bottles);
 					break;
 
@@ -96,6 +122,9 @@ class PagesController extends BaseController {
 					break;
 
 				default:
+					$brewery = Brewery::orderby('short_name')->get();
+					$bottles = $this->returnBottles($brewery);
+					$returnPhotos = $this->returnPhotoIDs($bottles);
 			}
 		return Response::make($returnPhotos);
 	}
@@ -124,16 +153,16 @@ class PagesController extends BaseController {
 		}
 		foreach ($bottle_IDs as $bottle_ID)
 		{
-			$photos[] = Photo::getPhotos($bottle_ID)->get();
+			$tempPhotos[] = Photo::getPhotos($bottle_ID)->get();
 		}
-
-		for ($i = 0; $i < count($photos); $i++)
+		for ($i = 0; $i < count($tempPhotos); $i++)
 		{
-			for ($j = 0; $j < count($photos[$i]); $j++)
+			for ($j = 0; $j < count($tempPhotos[$i]); $j++)
 			{
-				$returnPhotos[] = $photos[$i][$j]['photo_ID'];
+				$photos[] = $tempPhotos[$i][$j]['photo_ID'];
 			}
 		}
+		$returnPhotos = array_unique($photos);
 		return $returnPhotos;
 	}
 	

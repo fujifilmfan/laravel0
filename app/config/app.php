@@ -14,7 +14,7 @@ return array(
 	*/
 
 	// changed from false on 2/21/15 by ACETONE
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------

@@ -30,6 +30,6 @@ class Photo extends Eloquent {
 
 	public function scopeGetPhotos($query, $bottle_ID)
 	{
-		return $query->select('photo_ID')->where('bottle_ID', '=', $bottle_ID)->where('angle', '=', 'front')->where('priority', '=', 'first');
+		return $query->select('photo_ID')->where('bottle_ID', '=', $bottle_ID)->where('priority', '=', 'first');
 	}
 }

@@ -2,15 +2,25 @@ $(document).ready(function($)
 	{
 		$('#filter_1').on('click', 'option', function()
 		{
-			// change dropdown menu labels to selected items              
-			$('#filter_1').find('.selection').text($(this).text());
-
+			// change dropdown menu labels to selected items unless 'View all bottles ' is selected
+			if ($(this).val() == 'default')
+			{
+				$('#filter_1').find('.selection').text('Select a filter ');
+			}
+			else
+			{
+				$('#filter_1').find('.selection').text($(this).text());
+			}
+			
 			// selector for options_1 dropdown menu items
 			var options = $('#options_1 ul');
 	
 			if ($(this).val() == 'default')
 			{
-				var category = '';  // resets category to '' if no choice is made
+				// sets category and selection to 'default'; PHP will send back all photos
+				var category = 'default';  
+				var selection = 'default';
+
 				// removes data from the button
 				$('#filter_1  button').removeData('category');
 								
@@ -18,6 +28,8 @@ $(document).ready(function($)
 				// change dropdown menu label from "Select ..." to "(choose ...)"
 				options.parents('#options_1').find('.selection').text('(choose a filter first) ');
 				options.append('<option value="default">(choose a filter first) </option>');
+
+				requestPhotos(category, selection);
 			}
 			else
 			{
@@ -38,10 +50,18 @@ $(document).ready(function($)
 						// for troubleshooting
 						console.log('returnOptions: \n' + returnOptions);
 						
-						// set category to 'beer type' for display purposes
-						if (category == 'beertype')
+						// change category names for display purposes
+						if (category == 'style_specific')
 						{
-							category = 'beer type';
+							category = 'specific style';
+						}
+						else if (category == 'style_general')
+						{
+							category = 'general style';
+						}
+						else if (category == 'style_alternative')
+						{
+							category = 'style';
 						}
 
 						// change dropdown menu label from "(choose ...)"" to "Select ..."
@@ -75,6 +95,11 @@ $(document).ready(function($)
 			// for troubleshooting
 			console.log("selection: " + selection);
 
+			requestPhotos(category, selection);
+		});
+
+		var requestPhotos = function(category, selection)
+		{
 			$.ajax(
 			{
 				type: 'GET',
@@ -99,7 +124,7 @@ $(document).ready(function($)
 						});
 				}
 			});
-		});
+		}
 	});
 
 

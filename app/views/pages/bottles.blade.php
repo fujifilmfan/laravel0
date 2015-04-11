@@ -24,8 +24,10 @@
 						<span class="selection">Select a filter </span><span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<option value="default">Select a filter </option>
-						<option value="beertype">Beer Type </option>
+						<option value="default">View all bottles </option>
+						<option value="style_specific">Style (specific) </option>
+						<option value="style_general">Style (general) </option>
+						<option value="style_alternative">Style (alternative) </option>
 						<option value="brewery">Brewery </option>
 						<option value="state">State </option>
 						<option value="province">Province </option>
