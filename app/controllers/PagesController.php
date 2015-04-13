@@ -166,6 +166,40 @@ class PagesController extends BaseController {
 		return $returnPhotos;
 	}
 	
+	public function weatherScraper()
+	{
+		$city = Input::get('city');
+
+		// this formats the text for weather-forecast.com; could be used for printing the URL to the webpage
+		// $newCity = str_replace(" ", "-", $city);
+		// what we want to replace, replace with, string to search
+		$city = str_replace(" ", "", $city);
+
+		$url = "http://www.weather-forecast.com/locations/" . $city . "/forecasts/latest";
+
+		function get_http_response_code($url) 
+		{
+			$headers = get_headers($url);
+			return substr($headers[0], 9, 3);
+		}
+
+		if(get_http_response_code($url) != "404") 
+		{
+			$contents = file_get_contents("http://www.weather-forecast.com/locations/" . $city . "/forecasts/latest");
+
+			// (.*?) finds anything between the stuff on either side
+			preg_match('/3 Day Weather Forecast Summary:<\/b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">(.*?)<\/span>/s', $contents, $matches);
+
+			// print_r($matches);
+		}
+
+		else 
+		{
+			$matches[1] = get_http_response_code($url);
+		}
+
+		return Response::make($matches[1]);
+	}
 }
 
 

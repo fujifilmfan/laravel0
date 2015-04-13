@@ -30,3 +30,7 @@ h2 {
   text-align: left;
   font-size: 1.2em;
 }
+
+.break {
+  min-height: 15px;
+}

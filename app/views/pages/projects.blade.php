@@ -5,6 +5,36 @@
 	<br />
 	<br />
 	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-10">
+				<div class="row">
+					<div class="col-sm-5">
+						<div class="preview">
+							<a href="projects/weather_scraper"><img src="/resources/projects/WeatherScraper/WeatherScraper_screenshot.png"></a>
+							<p class="caption">Project: Weather Scraper (Complete Web Dev - Udemy)</p>
+							<p class="caption">Emphasis: PHP</p>
+							<p class="caption">Completed: 5 January 2015</p>	
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<p></p>
+					</div>
+					<div class="col-sm-5">
+						<div class="preview">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-1">
+			</div>
+		</div><!-- row -->
+
+		<div class="break"></div>
+
 		<div class="row">
 			<div class="col-xs-1">
 			</div>

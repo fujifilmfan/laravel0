@@ -21,6 +21,7 @@ Route::resource('bottles', 'BottlesController');
 
 Route::get('filterOne', 'PagesController@filterOne');
 Route::get('optionOne', 'PagesController@optionOne');
+Route::get('weatherScraper', 'PagesController@weatherScraper');
 
 // ---------- non-production routes ---------- //
 
