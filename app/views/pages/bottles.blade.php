@@ -52,7 +52,7 @@
 	<br /><br />
 	<div class="beerwall">
 		@foreach ($photos as $photo)
-			<img src="resources/bottles/{{ $photo->photo_ID }}.jpg">
+			<img class="lazy" data-original="resources/bottles/{{ $photo->photo_ID }}.jpg">
 		@endforeach
 	</div>
 

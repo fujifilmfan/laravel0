@@ -1,5 +1,8 @@
 $(document).ready(function($) 
 	{
+		// lazyload images; 600 will allow two rows of images to load below the viewport
+		$("img.lazy").lazyload({ threshold : 600 });
+
 		$('#filter_1').on('click', 'option', function()
 		{
 			// change dropdown menu labels to selected items unless 'View all bottles ' is selected
