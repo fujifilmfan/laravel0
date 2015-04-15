@@ -1,7 +1,11 @@
 $(document).ready(function($) 
 	{
 		// lazyload images; 600 will allow two rows of images to load below the viewport
-		$("img.lazy").lazyload({ threshold : 600 });
+		var lazy = function() 
+		{
+			$("img.lazy").lazyload({ threshold : 600 });
+		}
+		lazy();
 
 		$('#filter_1').on('click', 'option', function()
 		{
@@ -123,8 +127,9 @@ $(document).ready(function($)
 					beerwall.empty();
 					$.each(returnPhotos, function(index, element) 
 						{
-							beerwall.append('<img src="resources/bottles/' + element + '.jpg">');
+							beerwall.append('<img class="lazy" data-original="resources/bottles/' + element + '.jpg">');
 						});
+					lazy();
 				}
 			});
 		}
